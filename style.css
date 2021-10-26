@@ -32,17 +32,19 @@ header {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .icon-card{
     min-height: 100px;
-    width: calc(100% / 5);
+    width: calc(100% / 5 - 10px);
     background-color: whitesmoke;
     border-radius: 15px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    margin-right: 10px;
 }
 
 .icon-card i {
@@ -64,7 +66,14 @@ header {
     width: 960px;
 }
 
-.color{
-    color: orange;
-    
+.animal{
+    color:orange
+}
+
+.vegetable{
+    color: chartreuse;
+}
+
+.user{
+    color: purple;
 }

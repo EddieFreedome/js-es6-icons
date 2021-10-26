@@ -11,61 +11,61 @@ const arrIcone = [
 		name: 'cat',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'crow',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'dog',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'dove',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'dragon',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'horse',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'hippo',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'fish',
 		prefix: 'fa-',
 		type: 'animal',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'carrot',
 		prefix: 'fa-',
 		type: 'vegetable',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'apple-alt',
 		prefix: 'fa-',
 		type: 'vegetable',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'lemon',
@@ -77,31 +77,31 @@ const arrIcone = [
 		name: 'pepper-hot',
 		prefix: 'fa-',
 		type: 'vegetable',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'user-astronaut',
 		prefix: 'fa-',
 		type: 'user',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'user-graduate',
 		prefix: 'fa-',
 		type: 'user',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'user-ninja',
 		prefix: 'fa-',
 		type: 'user',
-		family: 'fas '
+		family: 'fas'
 	},
 	{
 		name: 'user-secret',
 		prefix: 'fa-',
 		type: 'user',
-		family: 'fas '
+		family: 'fas'
 	}
 ];
 
@@ -124,7 +124,9 @@ for (let i = 0; i < arrIcone.length; i++) {
 
     console.log(icona);
 }
-generaCard();
+
+
+generaCard(arrIcone);
 
 //select.onchange
 //icons-container.innerHTML = ""; pulisco board dalle cards
@@ -154,15 +156,14 @@ generaCard();
 
 
 //function generacard:
-function generaCard(){
+function generaCard(array){
     iconsContainer.innerHTML = ""
-    getVariables();
     //creo card per ogni...
-    for (i = 0; i < arrIcone.length; i++){
-
+    for (i = 0; i < array.length; i++){
+		let {family, prefix, type, color, name} = array[i];
         const content = ` 
             <div class="icon-card d-flex">
-                <i class="${family} + ${prefix} + ${type} + ${color}"></i>
+                <i class="${family} ${prefix}${name}" style= "color:${color}"></i>
                 <h4>${name}</h4>
             </div>
         `;
@@ -172,19 +173,6 @@ function generaCard(){
 }
 
 
-function getVariables (){
-    for (let i = 0; i < arrIcone.length; i++) {
-        let icona = arrIcone[i]
-        let family = arrIcone[i].family;
-        let name = icona;
-        let prefix = icona;
-        let type = icona;
-        let color = icona;
-
-        return family, name, prefix, type, color
-        
-    }
-}
 // const iconFilter = document.getElementById("select").value
 // console.log(iconFilter);
 // iconFilter.addEventListener("change", function(){
