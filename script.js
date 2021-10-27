@@ -112,8 +112,6 @@ const iconsContainer = document.querySelector('.icons-container')
 for (let i = 0; i < arrIcone.length; i++) {
     let icona = arrIcone[i]
     let tipo = arrIcone[i].type
-    console.log(tipo)
-
     if (tipo === 'animal') {
         icona['color'] = '#ef6e1e'
     } else if (tipo === 'vegetable'){
@@ -121,8 +119,6 @@ for (let i = 0; i < arrIcone.length; i++) {
     } else {
         icona['color'] = '#b5308d'
     }
-
-    console.log(icona);
 }
 
 
@@ -149,8 +145,6 @@ generaCard(arrIcone);
 //come faccio a far partire tutto lo script quando cambio flag del select? ----
 //il type lo posso usare per distinguere e separare gli oggetti in array diversi
 //al click, cicla l'array principale
-//per ogni i, prendi il valore type, se non esiste crea un nuovo array . Se esiste, pushalo nell'array corrispondente
-    //questo mi permette di suddividere per tipo gli oggetti in array diversi
 
 
 
@@ -172,6 +166,61 @@ function generaCard(array){
     }
 }
 
+//array statici in base al tipo
+const arrAnimali= [];
+const arrVegetali = [];
+const arrUser = [];
+
+smistaTipo(arrIcone);
+console.log(arrAnimali)
+console.log(arrVegetali)
+console.log(arrUser)
+function smistaTipo (array){
+	for (let i = 0; i < array.length; i++) {
+		let tipo = array[i].type;
+		console.log(tipo)
+		if (tipo === 'animal'){
+			arrAnimali.push(array[i]);
+		} else if (tipo === 'vegetable'){
+			arrVegetali.push(array[i]);
+		} else {
+			arrUser.push(array[i]);
+		}
+
+	}
+}
+
+const select = document.getElementById('select');
+console.log(select);
+let valoreSelect = select.value;
+console.log(valoreSelect)
+select.addEventListener("change", function(){
+	switch (valoreSelect) {
+		case '1': 
+			generaCard(arrIcone);
+		break;
+		case '2': 
+			generaCard(arrAnimali);
+		break;
+		case '3': 
+			generaCard(arrVegetali);
+		break;
+		case '4': 
+			generaCard(arrUser);
+		break;
+	}
+})
+
+
+
+//vado a pescare il tipo di ciascun oggetto
+// const tipoAnimale = arrIcone.filter((oggetto) => {
+// 	if (oggetto.type === 'animal'){
+// 		return true;
+// 	}
+
+// })
+// console.log(tipoAnimale);
 
 // const iconFilter = document.getElementById("select").value
 // console.log(iconFilter);
