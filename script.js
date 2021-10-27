@@ -192,9 +192,9 @@ function smistaTipo (array){
 
 const select = document.getElementById('select');
 console.log(select);
-let valoreSelect = select.value;
 console.log(valoreSelect)
 select.addEventListener("change", function(){
+	let valoreSelect = this.value;
 	switch (valoreSelect) {
 		case '1': 
 			generaCard(arrIcone);
